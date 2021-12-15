@@ -1,0 +1,136 @@
+.component {
+    width: 70%;
+    margin: 0 auto;
+    padding-top: 10px;
+    h1 {
+        color: rgb(182, 8, 8);
+    }
+    &-input {
+        border-top: 1px gray solid;
+        border-bottom: 1px gray solid;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-around;
+        input[type=text] {
+            width: 79%;
+            height: 30px;
+            border-radius: 3px;
+            border: 1px gray solid;
+            padding-left: 10px;
+        }
+        .add {
+            width: 20%;
+            height: 30px;
+            color: white;
+            background-color: green;
+            border: 0px;
+            border-radius: 3px;
+            &:not(:disabled):hover {
+                cursor: pointer;
+            }
+        }
+    }
+    &-table {
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            tr {
+                height: 50px;
+                border-bottom: 1px gray solid;
+                td {
+                    text-align: center;
+                }
+                &:not(:first-child):hover {
+                    background-color: rgb(211, 210, 210);
+                }
+                .edit,
+                .delete {
+                    padding-left: 10px;
+                    padding-right: 10px;
+                    height: 30px;
+                    border: 0px;
+                    border-radius: 3px;
+                    &:not(:disabled):hover {
+                        cursor: pointer;
+                    }
+                }
+                .edit {
+                    background-color: yellow;
+                    color: black;
+                }
+                .delete {
+                    background-color: red;
+                    color: white;
+                }
+                .click {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+.wrapper {
+    background-color: rgba(#000000, 0.5);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    .box {
+        background-color: white;
+        height: 30%;
+        width: 40%;
+        margin-top: 20%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border-radius: 3px;
+        &-head {
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            height: 20%;
+            .close {
+                cursor: pointer;
+            }
+        }
+        &-main {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            height: 60%;
+            input[type=text] {
+                width: 80%;
+                height: 30px;
+                border-radius: 3px;
+                border: 1px gray solid;
+                padding-left: 10px;
+            }
+        }
+        &-bottom {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            height: 20%;
+            .save {
+                padding-left: 10px;
+                padding-right: 10px;
+                height: 30px;
+                border: 0px;
+                border-radius: 3px;
+                margin-right: 20px;
+                color: white;
+                background-color: blue;
+                &:not(:disabled):hover {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

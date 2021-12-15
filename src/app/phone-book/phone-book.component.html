@@ -1,0 +1,53 @@
+<div class="component">
+    <h1>My phone book!</h1>
+
+    <div class="component-input">
+        <input type="text" [(ngModel)]="field">
+        <button class="add" (click)="openForm()">add phone</button>
+    </div>
+
+    <div class="component-table">
+        <table>
+            <tr>
+                <th (click)="sort('firstName')" class="click">First name</th>
+                <th (click)="sort('secondName')" class="click">Last name</th>
+                <th (click)="sort('phone')" class="click">Number</th>
+                <th>edit</th>
+                <th>delete</th>
+            </tr>
+
+            <tr *ngFor="let contact of contactBook | search:field | sort:type:up; let i = index; ">
+                <td>{{contact.firstName}}</td>
+                <td>{{contact.secondName}}</td>
+                <td>{{contact.phone}}</td>
+                <td><button class="edit" (click)="editContact(i)">edit</button></td>
+                <td><button class="delete" (click)="delContact(i)">delete</button></td>
+            </tr>
+
+        </table>
+    </div>
+
+</div>
+
+<ng-container *ngIf="addPhone">
+    <div class="wrapper">
+        <div class="box">
+
+            <div class="box-head">
+                <span>Add phone</span>
+                <div class="close" (click)="closeForm()">X</div>
+            </div>
+
+            <div class="box-main">
+                <input type="text" placeholder="first name goes here" [(ngModel)]="firstName">
+                <input type="text" placeholder="second name goes here" [(ngModel)]="secondName">
+                <input type="text" placeholder="number phone goes here" [(ngModel)]="phone">
+            </div>
+
+            <div class="box-bottom">
+                <button class="save" (click)="addContact()">Save</button>
+            </div>
+
+        </div>
+    </div>
+</ng-container>
